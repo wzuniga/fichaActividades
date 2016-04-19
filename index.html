@@ -8,8 +8,9 @@
     <script src="JS/jquery.js"></script>
     <script src="JS/bootstrap.js"></script>
     <script src="JS/angular.js"></script>
+    <script src="JS/controller.js"></script>
   </head>
-  <body>
+  <body ng-app="dataSheet" ng-controller="ctrl">
     <div class="container">
 
       <div class="jumbotron">
@@ -28,6 +29,42 @@
       </div>
 
       <div class="row">
+
+        <div class="col-sm-12">
+          <table class="table table-striped">
+            <tr>
+              <th>APELLIDOS Y NOMBRES</th>
+              <th>FACULTAD</th>
+              <th>DEPARTAMENTO ACADEMICO</th>
+              <th>CATEGORIA</th>
+              <th>REGIMEN</th>
+              <th>CONDICION</th>
+            </tr>
+            <tr>
+              <td><input type="text" class="form-control" ng-model="name" placeholder="Apellidos, Nombres"></td>
+              <td><input type="text" class="form-control" ng-model="faculty" placeholder="Facultad"></td>
+              <td><input type="text" class="form-control" ng-model="deparment" placeholder="Departamento"></td>
+              <td><input type="text" class="form-control" ng-model="category" placeholder="Categoria"></td>
+              <td><input type="text" class="form-control" ng-model="regime" placeholder="Regimen"></td>
+              <td><input type="text" class="form-control" ng-model="status" placeholder="Condicion"></td>
+            </tr>
+          </table>
+          
+        </div>
+
+        <div class="col-sm-12">
+          <table class="table table-striped">
+            <tr>
+              <th>TITULO O GRADO</th>
+              <td><input type="text" class="form-control" ng-model="title" placeholder="Titulo"></td>
+              <th>ESPECIALIDAD</th>
+              <td><input type="text" class="form-control" ng-model="speciality" placeholder="Especialidad"></td>
+            </tr>
+          </table>
+        </div>
+
+
+
         <div class="col-sm-4">
           <h3>Column 1</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
@@ -47,3 +84,4 @@
     </div>
   </body>
 </html>
+
