@@ -32,6 +32,9 @@
       <div class="row">
 
         <div class="col-sm-12">
+	  <div class="panel panel-default">
+	   <div class="panel-heading">TRABAJO LECTIVO</div>
+          </div>
           <table class="table table-striped">
             <tr>
               <th>APELLIDOS Y NOMBRES</th>
@@ -63,7 +66,7 @@
             </tr>
           </table>
         </div>
-
+	
         <div class="col-sm-12">
           <table class="table table-bordered">
             <tr>
@@ -124,6 +127,54 @@
         </div>
         <br>
     </div>
+      <br>
+      <div class="panel panel-default">
+        <div class="panel-heading">TRABAJO NO LECTIVO(ACTIVIDADES)</div>
+      </div >
+      
+      <div  class="col-sm-12">
+        <table  class="table table-striped">
+          <tr>
+	    <th>INVESTIGACION</th>  
+	    <th>Duracion</th>
+	    <th>Horario</th>
+	    <th>Planta Fisica</th>
+	    <th>Horas Semanales</th>
+	    <th>Total de Horas</th> 
+	  </tr>
+	  <tr>
+	    <td><input type="text" class="form-control" ng-model="investigation" placeholder="Investigacion"></td>
+            <td><input type="text" class="form-control" ng-model="duration" placeholder="2 meses"></td>
+            <td><input type="text" class="form-control" ng-model="schedule" placeholder="marte de 9:00 a 13:00"></td>
+            <td><input type="text" class="form-control" ng-model="physicalplant" placeholder="EPIS"></td>
+            <td><input type="text" class="form-control" ng-model="hourweek" placeholder="horas/semana"></td>
+            <td><input type="text" class="form-control" ng-model="totalhour" placeholder="total horas"></td>
+	  </tr>
+        </table>	
+      </div>
+      <br><br>
+      <div  class="col-sm-12">
+        <table  class="table table-striped">
+          <tr>
+	    <th>TRABAJO NO ELECTIVO</th>  
+	    <th>Duracion</th>
+	    <th>Horario</th>
+	    <th>Planta Fisica</th>
+	    <th>Horas Semanales</th>
+	    <th>Total de Horas</th> 
+	  </tr>
+	  <tr>
+	    <td><input type="text" class="form-control" ng-model="investigation2" placeholder="Investigacion"></td>
+            <td><input type="text" class="form-control" ng-model="duration2" placeholder="2 meses"></td>
+            <td><input type="text" class="form-control" ng-model="schedule2" placeholder="marte de 9:00 a 13:00"></td>
+            <td><input type="text" class="form-control" ng-model="physicalplant2" placeholder="EPIS"></td>
+            <td><input type="text" class="form-control" ng-model="hourweek2" placeholder="horas/semana"></td>
+            <td><input type="text" class="form-control" ng-model="totalhour2" placeholder="total horas"></td>
+	  </tr>
+        </table>	
+      </div>
+ 
+
     </div>
   </body>
 </html>
