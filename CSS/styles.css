@@ -2,5 +2,8 @@
 	/*writing-mode: sideways-rl;*/
 }
 .big-header{
-	width: 700px;
+   width: 700px;
+}
+body{
+   background-color: rgb(176,196,222); 
 }
