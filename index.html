@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="CSS/bootstrap.css">
+    <link rel="stylesheet" href="CSS/styles.css">
     <script src="JS/jquery.js"></script>
     <script src="JS/bootstrap.js"></script>
     <script src="JS/angular.js"></script>
@@ -63,23 +64,65 @@
           </table>
         </div>
 
-
-
-        <div class="col-sm-4">
-          <h3>Column 1</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      </div>
-      <div class="col-sm-4">
-        <h3>Column 2</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      </div>
-      <div class="col-sm-4">
-        <h3>Column 3</h3>        
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      </div>
+        <div class="col-sm-12">
+          <table class="table table-bordered">
+            <tr>
+              <th class="big-header" rowspan="2">Curso</th>
+              <th rowspan="2"><p class="vertical">(A)Anual (S)Semestral</p></th>
+              <th rowspan="2">Escuela Profecional</th>
+              <th colspan="3">Horas semanales por grupo</th>
+              <th rowspan="2"><p class="vertical">Horas compartidas</p></th>
+              <th rowspan="2"><p class="vertical">Horas Semanales</p></th>
+              <th rowspan="2"><p class="vertical">Total</p></th>
+              <th rowspan="2"><p class="vertical">N° Aula</p></th>
+              <th rowspan="2"><p class="vertical">N° Grupo</p></th>
+              <th rowspan="2"><p class="vertical">N° Alumnos</p></th>
+              <th  colspan="6">Dias (Consigne Horas de Inicio y Termino)</th>
+            </tr>
+            <tr>
+              <td>T</td>
+              <td>P</td>
+              <td>L</td>
+              <td></td>
+              <td>L</td>
+              <td>M</td>
+              <td>M</td>
+              <td>J</td>
+              <td>V</td>
+            </tr>
+            <tr>
+              <td rowspan="2"><input type="text" class="form-control" ng-model="course1" placeholder="Curso"></td>
+              <td rowspan="2"><input type="text" class="form-control" ng-model="" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control" ng-model="" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control" ng-model="" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control" ng-model="" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control" ng-model="" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control" ng-model="hshare" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control" ng-model="" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control" ng-model="" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control" ng-model="" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control" ng-model="" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control" ng-model="" placeholder=""></td>
+              <td>De: </td>
+              <td><input type="text" class="form-control" ng-model="" placeholder=""></td>
+              <td><input type="text" class="form-control" ng-model="" placeholder=""></td>
+              <td><input type="text" class="form-control" ng-model="" placeholder=""></td>
+              <td><input type="text" class="form-control" ng-model="" placeholder=""></td>
+              <td><input type="text" class="form-control" ng-model="" placeholder=""></td>
+            </tr>
+            <tr>
+              <td>Hasta: </td>
+              <td><input type="text" class="form-control" ng-model="" placeholder=""></td>
+              <td><input type="text" class="form-control" ng-model="" placeholder=""></td>
+              <td><input type="text" class="form-control" ng-model="" placeholder=""></td>
+              <td><input type="text" class="form-control" ng-model="" placeholder=""></td>
+              <td><input type="text" class="form-control" ng-model="" placeholder=""></td>
+            </tr>
+          </table>
+          <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></button>
+          <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-copy"></span></button>
+        </div>
+        <br>
     </div>
     </div>
   </body>
