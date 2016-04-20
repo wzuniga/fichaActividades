@@ -4,7 +4,7 @@ app.controller('ctrl', function($scope, $compile) {
 	$scope.test = "gg";
 	$scope.tr = "gg2";
 
-	$scope.courses = [{"value":"test"}];
+	$scope.courses = [{"value":"course0"}];
     $scope.sems = [{"value":"sem0"}];
     $scope.schools = [{"value":"school0"}];
     $scope.ts = [{"value":"t0"}];
@@ -17,15 +17,15 @@ app.controller('ctrl', function($scope, $compile) {
     $scope.groups = [{"value":"group0"}];
     $scope.nstudents = [{"value":"nstudent0"}];
     $scope.lds = [{"value":"ld0"}];
-    $scope.mds = [{"value":""}];
-    $scope.mids = [{"value":""}];
-    $scope.jds = [{"value":""}];
-    $scope.vd = [{"value":""}];
-    $scope.lhs = [{"value":""}];
-    $scope.mhs = [{"value":""}];
-    $scope.mihs = [{"value":""}];
-    $scope.jhs = [{"value":""}];
-    $scope.vhs = [{"value":""}];
+    $scope.mds = [{"value":"md0"}];
+    $scope.mids = [{"value":"mid0"}];
+    $scope.jds = [{"value":"jd0"}];
+    $scope.vd = [{"value":"vd0"}];
+    $scope.lhs = [{"value":"lh0"}];
+    $scope.mhs = [{"value":"mh0"}];
+    $scope.mihs = [{"value":"mih0"}];
+    $scope.jhs = [{"value":"jh0"}];
+    $scope.vhs = [{"value":"vh0"}];
 
 
 	var getMeMyValue = $scope[$scope.courses[0].value];
@@ -37,7 +37,29 @@ app.controller('ctrl', function($scope, $compile) {
 
 	$scope.addCourse = function() {
     	$scope.countCourses++;
-    	$scope.courses.push({"name":"course"+$scope.countCourses});
+        $scope.courses.push({"value":"course"+$scope.countCourses});
+        $scope.sems.push({"value":"sem"+$scope.countCourses});
+        $scope.schools.push({"value":"school"+$scope.countCourses});
+        $scope.ts.push({"value":"t"+$scope.countCourses});
+        $scope.ps.push({"value":"p"+$scope.countCourses});
+        $scope.ls.push({"value":"l"+$scope.countCourses});
+        $scope.hshares.push({"value":"hshare"+$scope.countCourses});
+        $scope.hweeks.push({"value":"hweek"+$scope.countCourses});
+        $scope.htotals.push({"value":"htotal"+$scope.countCourses});
+        $scope.nrooms.push({"value":"nroom"+$scope.countCourses});
+        $scope.groups.push({"value":"group"+$scope.countCourses});
+        $scope.nstudents.push({"value":"nstudent"+$scope.countCourses});
+        $scope.lds.push({"value":"ld"+$scope.countCourses});
+        $scope.mds.push({"value":"md"+$scope.countCourses});
+        $scope.mids.push({"value":"mid"+$scope.countCourses});
+        $scope.jds.push({"value":"jd"+$scope.countCourses});
+        $scope.vd.push({"value":"vd"+$scope.countCourses});
+        $scope.lhs.push({"value":"lh"+$scope.countCourses});
+        $scope.mhs.push({"value":"mh"+$scope.countCourses});
+        $scope.mihs.push({"value":"mih"+$scope.countCourses});
+        $scope.jhs.push({"value":"jh"+$scope.countCourses});
+        $scope.vhs.push({"value":"vh"+$scope.countCourses});
+
 
     	var str = '<tr>'+
               '<td rowspan="2"><input type="text" class="form-control rectif" ng-model="course'+$scope.countCourses+'" placeholder="Curso"></td>'+
@@ -71,6 +93,9 @@ app.controller('ctrl', function($scope, $compile) {
 
     	angular.element(document.getElementById('tablet')).append($compile(str)($scope));
   		console.log("fnka");
+        console.log($scope.courses);
+        var getMeMyValue = $scope[$scope.courses[$scope.countCourses-1].value];
+        console.log(getMeMyValue);
   	};
 
   	$scope.ttt = function() {

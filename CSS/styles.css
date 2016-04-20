@@ -1,6 +1,11 @@
 .vertical{
-	/*writing-mode: sideways-rl;*/
+	writing-mode: vertical-lr;
 }
 .big-header{
 	width: 700px;
+}
+.rectif{
+	height: 25px;
+	min-width: 27px;
+	    padding: 6px 4px;
 }
