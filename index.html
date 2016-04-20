@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Bootstrap Example</title>
+    <title>Fichas de Actividades</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="CSS/bootstrap.css">
@@ -68,7 +68,7 @@
         </div>
 	
         <div class="col-sm-12">
-          <table class="table table-bordered">
+          <table class="table table-bordered" id="tablet">
             <tr>
               <th class="big-header" rowspan="2">Curso</th>
               <th rowspan="2"><p class="vertical">(A)Anual (S)Semestral</p></th>
@@ -94,35 +94,38 @@
               <td>V</td>
             </tr>
             <tr>
-              <td rowspan="2"><input type="text" class="form-control" ng-model="course1" placeholder="Curso"></td>
-              <td rowspan="2"><input type="text" class="form-control" ng-model="" placeholder=""></td>
-              <td rowspan="2"><input type="text" class="form-control" ng-model="" placeholder=""></td>
-              <td rowspan="2"><input type="text" class="form-control" ng-model="" placeholder=""></td>
-              <td rowspan="2"><input type="text" class="form-control" ng-model="" placeholder=""></td>
-              <td rowspan="2"><input type="text" class="form-control" ng-model="" placeholder=""></td>
-              <td rowspan="2"><input type="text" class="form-control" ng-model="hshare" placeholder=""></td>
-              <td rowspan="2"><input type="text" class="form-control" ng-model="" placeholder=""></td>
-              <td rowspan="2"><input type="text" class="form-control" ng-model="" placeholder=""></td>
-              <td rowspan="2"><input type="text" class="form-control" ng-model="" placeholder=""></td>
-              <td rowspan="2"><input type="text" class="form-control" ng-model="" placeholder=""></td>
-              <td rowspan="2"><input type="text" class="form-control" ng-model="" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control rectif" ng-model="course0" placeholder="Curso"></td>
+              <td rowspan="2"><input type="text" class="form-control rectif" ng-model="sem0" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control rectif" ng-model="school0" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control rectif" ng-model="t0" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control rectif" ng-model="p0" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control rectif" ng-model="l0" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control rectif" ng-model="hshare0" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control rectif" ng-model="hweek0" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control rectif" ng-model="htotal0" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control rectif" ng-model="nroom0" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control rectif" ng-model="group0" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control rectif" ng-model="nstudent0" placeholder=""></td>
               <td>De: </td>
-              <td><input type="text" class="form-control" ng-model="" placeholder=""></td>
-              <td><input type="text" class="form-control" ng-model="" placeholder=""></td>
-              <td><input type="text" class="form-control" ng-model="" placeholder=""></td>
-              <td><input type="text" class="form-control" ng-model="" placeholder=""></td>
-              <td><input type="text" class="form-control" ng-model="" placeholder=""></td>
+              <td><input type="text" class="form-control rectif" ng-model="ld0" placeholder=""></td>
+              <td><input type="text" class="form-control rectif" ng-model="md0" placeholder=""></td>
+              <td><input type="text" class="form-control rectif" ng-model="md0" placeholder=""></td>
+              <td><input type="text" class="form-control rectif" ng-model="jd0" placeholder=""></td>
+              <td><input type="text" class="form-control rectif" ng-model="vd0" placeholder=""></td>
             </tr>
             <tr>
               <td>Hasta: </td>
-              <td><input type="text" class="form-control" ng-model="" placeholder=""></td>
-              <td><input type="text" class="form-control" ng-model="" placeholder=""></td>
-              <td><input type="text" class="form-control" ng-model="" placeholder=""></td>
-              <td><input type="text" class="form-control" ng-model="" placeholder=""></td>
-              <td><input type="text" class="form-control" ng-model="" placeholder=""></td>
+              <td><input type="text" class="form-control rectif" ng-model="lh0" placeholder=""></td>
+              <td><input type="text" class="form-control rectif" ng-model="mh0" placeholder=""></td>
+              <td><input type="text" class="form-control rectif" ng-model="mh0" placeholder=""></td>
+              <td><input type="text" class="form-control rectif" ng-model="jh0" placeholder=""></td>
+              <td><input type="text" class="form-control rectif" ng-model="vh0" placeholder=""></td>
             </tr>
           </table>
-          <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></button>
+          <div></div>
+          <button type="button" class="btn btn-primary" ng-click="addCourse()">
+          	<span class="glyphicon glyphicon-plus"></span>
+          </button>
           <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-copy"></span></button>
         </div>
         <br>
@@ -176,6 +179,7 @@
  
 
     </div>
+    <input type="text" class="form-control" ng-model="courses" placeholder="">
   </body>
 </html>
 
