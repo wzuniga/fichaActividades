@@ -12,6 +12,10 @@
 	overflow:hidden;
 	resize: none;
 }
+.rectif-letter{
+	height: 54px;
+}
+
 
 .table > thead > tr > th, 
 .table > tbody > tr > th, 
