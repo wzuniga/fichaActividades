@@ -1,9 +1,49 @@
 .vertical{
-	/*writing-mode: sideways-rl;*/
+	writing-mode: vertical-rl;
 }
 .big-header{
-   width: 700px;
+    width: 200px;
+    height: 150px;
 }
 body{
-   background-color: rgb(176,196,222); 
+   /*background-color: rgb(176,196,222);*/ 
 }
+.rectif{
+	height: 25px;
+	min-width: 27px;
+	padding: 6px 2px;
+	overflow:hidden;
+	resize: none;
+}
+
+.table > thead > tr > th, 
+.table > tbody > tr > th, 
+.table > tfoot > tr > th, 
+.table > thead > tr > td, 
+.table > tbody > tr > td, 
+.table > tfoot > tr > td {
+    padding: 2px;
+}
+
+.form-control {
+    border-radius: 0px;
+}
+
+.borderTD{
+    border: 1px solid;
+    border-collapse: collapse;
+}
+.alignTD{
+    text-align: right;
+}
+.tamCeldas{
+    width: 130px; 
+}
+.tamCeldasHor{
+    width: 200px;
+}
+
+
+
+
+

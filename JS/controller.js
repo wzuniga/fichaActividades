@@ -1,80 +1,97 @@
 var app = angular.module('dataSheet', []);
 app.controller('ctrl', function($scope, $compile) {
     
-	$scope.test = "gg";
-	$scope.tr = "gg2";
+    $scope.test = "gg";
+    $scope.tr = "gg2";
 
-	$scope.courses = [{"value":"test"}];
-    $scope.sems = [{"value":"sem0"}];
-    $scope.schools = [{"value":"school0"}];
-    $scope.ts = [{"value":"t0"}];
-    $scope.ps = [{"value":"p0"}];
-    $scope.ls = [{"value":"l0"}];
-    $scope.hshares = [{"value":"hshare0"}];
-    $scope.hweeks = [{"value":"hweek0"}];
-    $scope.htotals = [{"value":"htotal0"}];
-    $scope.nrooms = [{"value":"nroom0"}];
-    $scope.groups = [{"value":"group0"}];
-    $scope.nstudents = [{"value":"nstudent0"}];
-    $scope.lds = [{"value":"ld0"}];
-    $scope.mds = [{"value":""}];
-    $scope.mids = [{"value":""}];
-    $scope.jds = [{"value":""}];
-    $scope.vd = [{"value":""}];
-    $scope.lhs = [{"value":""}];
-    $scope.mhs = [{"value":""}];
-    $scope.mihs = [{"value":""}];
-    $scope.jhs = [{"value":""}];
-    $scope.vhs = [{"value":""}];
+    //var getMeMyValue = $scope[$scope.courses[0].value];
+    //var r= $compile("$scope.test")
+    //$scope.courses.push(r(scope));
+    //console.log($scope.courses);
+    //console.log(getMeMyValue);
+    $scope.countCourses = 0;
+    $scope.countInvest = 0;
+    $scope.countTrabajo = 0;
 
+    $scope.addCourse = function() {
 
-	var getMeMyValue = $scope[$scope.courses[0].value];
-	//var r= $compile("$scope.test")
-	//$scope.courses.push(r(scope));
-	//console.log($scope.courses);
-	console.log(getMeMyValue);
-	$scope.countCourses = 0;
+        $scope.countCourses++;
 
-	$scope.addCourse = function() {
-    	$scope.countCourses++;
-    	$scope.courses.push({"name":"course"+$scope.countCourses});
+        //window.location.reload();
+        //window.alert("hi!");
+        var inp = '<td rowspan="2"><input type="text" class="form-control rectif" ng-model="';
+        var skt = '<td><input type="text" class="form-control rectif" ng-model="';
+        var models = ['course', 'sem', 'school', 't', 'p', 'l', 'hshare', 'hweek', 'htotal', 'nroom', 'group', 'nstudent', 'ld', 'md', 'mid', 'jd', 'vd', 'lh', 'mh', 'mih', 'jh', 'vh'];
+        var placeh = ['Curso','','','','','','','','','','','','','','','','','','','','','']
+        var str = '<tr>';
+      
+        for (var i = 0; i < 12; i++)
+            str += inp+models[i]+$scope.countCourses+'" placeholder="'+placeh[i]+'"></td>';
+        str+='<td>De: </td>';
 
-    	var str = '<tr>'+
-              '<td rowspan="2"><input type="text" class="form-control rectif" ng-model="course'+$scope.countCourses+'" placeholder="Curso"></td>'+
-              '<td rowspan="2"><input type="text" class="form-control rectif" ng-model="sem'+$scope.countCourses+'" placeholder=""></td>'+
-              '<td rowspan="2"><input type="text" class="form-control rectif" ng-model="school'+$scope.countCourses+'" placeholder=""></td>'+
-              '<td rowspan="2"><input type="text" class="form-control rectif" ng-model="t'+$scope.countCourses+'" placeholder=""></td>'+
-              '<td rowspan="2"><input type="text" class="form-control rectif" ng-model="p'+$scope.countCourses+'" placeholder=""></td>'+
-              '<td rowspan="2"><input type="text" class="form-control rectif" ng-model="l'+$scope.countCourses+'" placeholder=""></td>'+
-              '<td rowspan="2"><input type="text" class="form-control rectif" ng-model="hshare'+$scope.countCourses+'" placeholder=""></td>'+
-              '<td rowspan="2"><input type="text" class="form-control rectif" ng-model="hweek'+$scope.countCourses+'" placeholder=""></td>'+
-              '<td rowspan="2"><input type="text" class="form-control rectif" ng-model="htotal'+$scope.countCourses+'" placeholder=""></td>'+
-             '<td rowspan="2"><input type="text" class="form-control rectif" ng-model="nroom'+$scope.countCourses+'" placeholder=""></td>'+
-              '<td rowspan="2"><input type="text" class="form-control rectif" ng-model="group'+$scope.countCourses+'" placeholder=""></td>'+
-              '<td rowspan="2"><input type="text" class="form-control rectif" ng-model="nstudent'+$scope.countCourses+'" placeholder=""></td>'+
-              '<td>De: </td>'+
-              '<td><input type="text" class="form-control rectif" ng-model="ld'+$scope.countCourses+'" placeholder=""></td>'+
-              '<td><input type="text" class="form-control rectif" ng-model="md'+$scope.countCourses+'" placeholder=""></td>'+
-              '<td><input type="text" class="form-control rectif" ng-model="mid'+$scope.countCourses+'" placeholder=""></td>'+
-              '<td><input type="text" class="form-control rectif" ng-model="jd'+$scope.countCourses+'" placeholder=""></td>'+
-              '<td><input type="text" class="form-control rectif" ng-model="vd'+$scope.countCourses+'" placeholder=""></td>'+
-            '</tr>'+
-            '<tr>'+
-              '<td>Hasta: </td>'+
-              '<td><input type="text" class="form-control rectif" ng-model="lh'+$scope.countCourses+'" placeholder=""></td>'+
-              '<td><input type="text" class="form-control rectif" ng-model="mh'+$scope.countCourses+'" placeholder=""></td>'+
-              '<td><input type="text" class="form-control rectif" ng-model="mih'+$scope.countCourses+'" placeholder=""></td>'+
-              '<td><input type="text" class="form-control rectif" ng-model="jh'+$scope.countCourses+'" placeholder=""></td>'+
-              '<td><input type="text" class="form-control rectif" ng-model="vh'+$scope.countCourses+'" placeholder=""></td>'+
-            '</tr>';
-    	//var str = "<button class='btn btn-primary' ng-click='ttt()'>Show alert #1</button>";
+        for (var i = 12; i < 17; i++)
+            str += skt+models[i]+$scope.countCourses+'" placeholder="'+placeh[i]+'"></td>';
+        str+='</tr><tr><td>Hasta: </td>';
+      
+        for (var i = 17; i < 22; i++)
+            str += skt+models[i]+$scope.countCourses+'" placeholder="'+placeh[i]+'"></td>';
+        str+='</tr>';
 
-    	angular.element(document.getElementById('tablet')).append($compile(str)($scope));
-  		console.log("fnka");
-  	};
+        angular.element(document.getElementById('tablet')).append($compile(str)($scope));
+        console.log("fnka mierda por fin");
+        //console.log($scope.courses);
+        var getMeMyValue = $scope["course"+($scope.countCourses-1)];
+        //var getMeMyValue = $scope[$scope.courses[$scope.countCourses-1].value];
+        console.log(getMeMyValue);
+    };
 
-  	$scope.ttt = function() {
-  		console.log("botoncito");
-  	}
+    $scope.addInvestigation = function(){
+	$scope.countInvest++;
+	var models2 = ['investigation', 'duration', 'schedule', 'physicalplant', 'hourweek', 'totalhour'];
+	var textarea = '<td><textarea class="form-control rectif" rows="2" ng-model="';
+	var tamcel = '<td class="tamCeldas"><input type="text" class="form-control" ng-model="';
+	var tamcelH= '<td class="tamCeldasHor"><input type="text" class="form-control" ng-model="';
+	var placeh2= ['Investigacion', '2 meses', 'martes de 9:00 a 13:00', 'EPIS', 'horas/semana', 'total horas'];
+	var exit= '"></td>';
+
+	var str2 = '<tr>' + textarea + models2[0] + $scope.countInvest + '" placeholder="' + placeh2[0] + '"></textarea></td>';
+	for(var i = 1; i < 6; i++){
+	    if(i == 2){
+		str2 += tamcelH + models2[i] + $scope.countInvest + '" placeholder="' + placeh2[i] + exit;
+	    }
+	    else{
+		str2 += tamcel + models2[i] + $scope.countInvest + '" placeholder="' + placeh2[i] + exit;
+	    }
+	}
+	str2+= '</tr>';
+	
+	angular.element(document.getElementById('tablet2')).append($compile(str2)($scope));
+	console.log("fnk2");
+    };
+    $scope.addWorks = function(){
+	$scope.countTrabajo++;
+	var models3 = ['works2', 'duration2', 'schedule2', 'physicalplant2', 'hourweek2', 'totalhour2'];
+	var textarea3 = '<td><textarea class="form-control rectif" rows="2" ng-model="';
+	var tamcel3 = '<td class="tamCeldas"><input type="text" class="form-control" ng-model="';
+	var tamcelH3= '<td class="tamCeldasHor"><input type="text" class="form-control" ng-model="';
+	var placeh3= ['Trabajos', '2 meses', 'martes de 9:00 a 13:00', 'EPIS', 'horas/semana', 'total horas'];
+	var exit3= '"></td>';
+
+	var str3 = '<tr>' + textarea3 + models3[0] + $scope.countTrabajo + '" placeholder="' + placeh3[0] + '"></textarea></td>';
+	for(var i = 1; i < 6; i++){
+	    if(i == 2){
+		str3 += tamcelH3 + models3[i] + $scope.countTrabajo + '" placeholder="' + placeh3[i] + exit3;
+	    }
+	    else{
+		str3 += tamcel3 + models3[i] + $scope.countTrabajo + '" placeholder="' + placeh3[i] + exit3;
+	    }
+	}
+	str3+= '</tr>';
+	
+	angular.element(document.getElementById('tablet3')).append($compile(str3)($scope));
+	console.log("fnk3");
+    };
+
 
 });
+    

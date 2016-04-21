@@ -33,7 +33,7 @@
 
         <div class="col-sm-12">
 	  <div class="panel panel-default">
-	   <div class="panel-heading">TRABAJO ELECTIVO</div>
+	   <div class="panel-heading">TRABAJO LECTIVO</div>
           </div>
           <table class="table table-striped">
             <tr>
@@ -72,8 +72,8 @@
             <tr>
               <th class="big-header" rowspan="2">Curso</th>
               <th rowspan="2"><p class="vertical">(A)Anual (S)Semestral</p></th>
-              <th rowspan="2">Escuela Profecional</th>
-              <th colspan="3">Horas semanales por grupo</th>
+              <th class="big-header" rowspan="2">Escuela Profesional</th>
+              <th colspan="3">Horas por grupo</th>
               <th rowspan="2"><p class="vertical">Horas compartidas</p></th>
               <th rowspan="2"><p class="vertical">Horas Semanales</p></th>
               <th rowspan="2"><p class="vertical">Total</p></th>
@@ -84,7 +84,7 @@
             </tr>
             <tr>
               <td>T</td>
-              <td>P</td>
+              <td>P</td> camba pading
               <td>L</td>
               <td></td>
               <td>L</td>
@@ -94,7 +94,7 @@
               <td>V</td>
             </tr>
             <tr>
-              <td rowspan="2"><input type="text" class="form-control rectif" ng-model="course0" placeholder="Curso"></td>
+              <td rowspan="2"><textarea type="text" class="form-control rectif" ng-model="course0" placeholder="Curso" maxlength="70"></textarea></td>
               <td rowspan="2"><input type="text" class="form-control rectif" ng-model="sem0" placeholder=""></td>
               <td rowspan="2"><input type="text" class="form-control rectif" ng-model="school0" placeholder=""></td>
               <td rowspan="2"><input type="text" class="form-control rectif" ng-model="t0" placeholder=""></td>
@@ -103,13 +103,13 @@
               <td rowspan="2"><input type="text" class="form-control rectif" ng-model="hshare0" placeholder=""></td>
               <td rowspan="2"><input type="text" class="form-control rectif" ng-model="hweek0" placeholder=""></td>
               <td rowspan="2"><input type="text" class="form-control rectif" ng-model="htotal0" placeholder=""></td>
-              <td rowspan="2"><input type="text" class="form-control rectif" ng-model="nroom0" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control rectif" ng-m   odel="nroom0" placeholder=""></td>
               <td rowspan="2"><input type="text" class="form-control rectif" ng-model="group0" placeholder=""></td>
               <td rowspan="2"><input type="text" class="form-control rectif" ng-model="nstudent0" placeholder=""></td>
               <td>De: </td>
               <td><input type="text" class="form-control rectif" ng-model="ld0" placeholder=""></td>
               <td><input type="text" class="form-control rectif" ng-model="md0" placeholder=""></td>
-              <td><input type="text" class="form-control rectif" ng-model="md0" placeholder=""></td>
+              <td><input type="text" class="form-control rectif" ng-model="mid0" placeholder=""></td>
               <td><input type="text" class="form-control rectif" ng-model="jd0" placeholder=""></td>
               <td><input type="text" class="form-control rectif" ng-model="vd0" placeholder=""></td>
             </tr>
@@ -117,26 +117,27 @@
               <td>Hasta: </td>
               <td><input type="text" class="form-control rectif" ng-model="lh0" placeholder=""></td>
               <td><input type="text" class="form-control rectif" ng-model="mh0" placeholder=""></td>
-              <td><input type="text" class="form-control rectif" ng-model="mh0" placeholder=""></td>
+              <td><input type="text" class="form-control rectif" ng-model="mih0" placeholder=""></td>
               <td><input type="text" class="form-control rectif" ng-model="jh0" placeholder=""></td>
               <td><input type="text" class="form-control rectif" ng-model="vh0" placeholder=""></td>
             </tr>
           </table>
-          <div></div>
-          <button type="button" class="btn btn-primary" ng-click="addCourse()">
-          	<span class="glyphicon glyphicon-plus"></span>
+          <button type="button" class="btn btn-info" ng-click="addCourse()">
+          	<span class="glyphicon glyphicon-plus"></span> Añadir
           </button>
-          <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-copy"></span></button>
+          <button type="button" class="btn btn-danger">
+          	<span class="glyphicon glyphicon-copy"></span> Duplicar
+          </button>
         </div>
         <br>
     </div>
       <br>
-      <div class="panel panel-default">
-        <div class="panel-heading">TRABAJO NO ELECTIVO(ACTIVIDADES)</div>
-      </div >
-      
-      <div  class="col-sm-12">
-        <table  class="table table-striped">
+    
+      <div  class="col-sm-14">
+        <div class="panel panel-default">
+          <div class="panel-heading">TRABAJO NO LECTIVO(ACTIVIDADES)</div>
+        </div >
+        <table  class="table table-bordered" id="tablet2">
           <tr>
 	    <th>INVESTIGACION</th>  
 	    <th>Duracion</th>
@@ -146,18 +147,28 @@
 	    <th>Total de Horas</th> 
 	  </tr>
 	  <tr>
-	    <td><input type="text" class="form-control" ng-model="investigation" placeholder="Investigacion"></td>
-            <td><input type="text" class="form-control" ng-model="duration" placeholder="2 meses"></td>
-            <td><input type="text" class="form-control" ng-model="schedule" placeholder="marte de 9:00 a 13:00"></td>
-            <td><input type="text" class="form-control" ng-model="physicalplant" placeholder="EPIS"></td>
-            <td><input type="text" class="form-control" ng-model="hourweek" placeholder="horas/semana"></td>
-            <td><input type="text" class="form-control" ng-model="totalhour" placeholder="total horas"></td>
+	    <!--<td><input type="text" class="form-control" ng-model="investigation" placeholder="Investigacion"></td>-->
+	    <td><textarea class="form-control rectif" rows="2" ng-model='investigation' placeholder="Investigacion"></textarea></td>
+            <td class="tamCeldas"><input type="text" class="form-control" ng-model="duration0" placeholder="2 meses"></td>
+            <td class="tamCeldasHor"><input type="text" class="form-control" ng-model="schedule0" placeholder="martes de 9:00 a 13:00"></td>
+            <td class="tamCeldas"><input type="text" class="form-control" ng-model="physicalplant0" placeholder="EPIS"></td>
+            <td class="tamCeldas"><input type="text" class="form-control" ng-model="hourweek0" placeholder="horas/semana"></td>
+            <td class="tamCeldas"><input type="text" class="form-control" ng-model="totalhour0" placeholder="total horas"></td>
 	  </tr>
-        </table>	
+	    <!--<tr>
+	    <th colspan="4" class="borderTD">TOTAL DE HORAS DE INVESTIGACION</th>
+             <td class="borderTD"><input type="text" placeholder="00.0" class="form-control" disabled></td>
+             <td class="borderTD"><input type="text" placeholder="00.0" class="form-control" disabled></td>
+	  <tr>-->
+	  
+        </table>
+	<button type="button" class="btn btn-info" ng-click="addInvestigation()">
+          <span class="glyphicon glyphicon-plus"></span> Añadir
+        </button>
       </div>
       <br><br>
-      <div  class="col-sm-12">
-        <table  class="table table-striped">
+      <div  class="col-sm-14">
+        <table  class="table table-bordered" id="tablet3">
           <tr>
 	    <th>TRABAJO NO ELECTIVO</th>  
 	    <th>Duracion</th>
@@ -167,17 +178,24 @@
 	    <th>Total de Horas</th> 
 	  </tr>
 	  <tr>
-	    <td><input type="text" class="form-control" ng-model="investigation2" placeholder="Investigacion"></td>
-            <td><input type="text" class="form-control" ng-model="duration2" placeholder="2 meses"></td>
-            <td><input type="text" class="form-control" ng-model="schedule2" placeholder="marte de 9:00 a 13:00"></td>
-            <td><input type="text" class="form-control" ng-model="physicalplant2" placeholder="EPIS"></td>
-            <td><input type="text" class="form-control" ng-model="hourweek2" placeholder="horas/semana"></td>
-            <td><input type="text" class="form-control" ng-model="totalhour2" placeholder="total horas"></td>
+	    <!--<td><input type="text" class="form-control" ng-model="investigation2" placeholder="Trabajos"></td>-->
+	    <td><textarea class="form-control rectif" rows="2" ng-model = "works2" placeholder="Trabajos"></textarea></td>
+            <td class="tamCeldas"><input type="text" class="form-control" ng-model="duration2" placeholder="2 meses"></td>
+            <td class="tamCeldasHor"><input type="text" class="form-control" ng-model="schedule2" placeholder="martes de 9:00 a 13:00"></td>
+            <td class="tamCeldas"><input type="text" class="form-control" ng-model="physicalplant2" placeholder="EPIS"></td>
+            <td class="tamCeldas"><input type="text" class="form-control" ng-model="hourweek2" placeholder="horas/semana"></td>
+            <td class="tamCeldas"><input type="text" class="form-control" ng-model="totalhour2" placeholder="total horas"></td>
 	  </tr>
-        </table>	
+	  <tr>
+	    <th colspan="4" class="borderTD">TOTAL DE HORAS TRABAJO NO LECTIVO</th>
+            <td class="borderTD"><input type="text" placeholder="00.0" class="form-control" disabled></td>
+            <td class="borderTD"><input type="text" placeholder="00.0" class="form-control" disabled></td>
+	  </tr>
+        </table>
+	<button type="button" class="btn btn-info" ng-click="addWorks()">
+          <span class="glyphicon glyphicon-plus"></span> Añadir
+        </button>
       </div>
- 
-
     </div>
     <input type="text" class="form-control" ng-model="courses" placeholder="">
   </body>
