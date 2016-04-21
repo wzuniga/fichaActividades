@@ -1,11 +1,27 @@
 .vertical{
-	writing-mode: vertical-lr;
+	writing-mode: vertical-rl;
 }
 .big-header{
-	width: 700px;
+	width: 270px;
+	height: 150px;
 }
 .rectif{
 	height: 25px;
 	min-width: 27px;
-	    padding: 6px 4px;
+	padding: 6px 2px;
+	overflow:hidden;
+	resize: none;
+}
+
+.table > thead > tr > th, 
+.table > tbody > tr > th, 
+.table > tfoot > tr > th, 
+.table > thead > tr > td, 
+.table > tbody > tr > td, 
+.table > tfoot > tr > td {
+    padding: 2px;
+}
+
+.form-control {
+	border-radius: 0px;
 }
