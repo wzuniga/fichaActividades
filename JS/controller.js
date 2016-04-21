@@ -1,27 +1,13 @@
 var app = angular.module('dataSheet', []);
 app.controller('ctrl', function($scope, $compile) {
-    
-    $scope.test = "gg";
-    $scope.tr = "gg2";
-    $scope.c3 = "";
 
-    //var getMeMyValue = $scope[$scope.courses[0].value];
-    //var r= $compile("$scope.test")
-    //$scope.courses.push(r(scope));
-    //console.log($scope.courses);
-    //console.log(getMeMyValue);
     $scope.countCourses = 0;
-    
-    var myEl = angular.element( document.querySelector( '#v1' ) );
-    myEl.remove();
 
 
     $scope.addCourse = function() {
 
         $scope.countCourses++;
 
-        //window.location.reload();
-        //window.alert("hi!");
         var inp = '<td rowspan="2"><input type="text" class="form-control rectif rectif-letter" ng-model="';
         var skt = '<td><input type="text" class="form-control rectif" ng-model="';
         var models = ['course', 'sem', 'school', 't', 'p', 'l', 'hshare', 'hweek', 'htotal', 'nroom', 'group', 'nstudent', 'ld', 'md', 'mid', 'jd', 'vd', 'lh', 'mh', 'mih', 'jh', 'vh'];
@@ -44,11 +30,6 @@ app.controller('ctrl', function($scope, $compile) {
         str+='</tr>';
 
         angular.element(document.getElementById('tablet')).append($compile(str)($scope));
-        console.log("fnka");
-        //console.log($scope.courses);
-        var getMeMyValue = $scope["course"+($scope.countCourses-1)];
-        //var getMeMyValue = $scope[$scope.courses[$scope.countCourses-1].value];
-        console.log(getMeMyValue);
 
     };
 
