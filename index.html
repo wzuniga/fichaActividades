@@ -20,13 +20,13 @@
             <img src="IMG/unsa3.png" class="col-xs-15 "  width="300" height="280" >
           </div>
           <div class="col-xs-13">
-            <h1>UNIVERSIDAD NACIONAL DE SAN AGUSTIN DE AREQUIPA<br>
+            <h1>UNIVERSIDAD NACIONAL DE SAN AGUSTIN<br>
               <small>VICERECTORADO ACADEMICO</small>
             </h1>
           </div>
         </div>
 
-        <p>PROXIMAMENTE UCOMEDOR Y UGYGABUS</p> 
+        <p>PROXIMAMENTE UCOMEDOR Y GYGABUSS</p> 
       </div>
 
       <div class="row">
@@ -95,6 +95,7 @@
             </tr>
             <tr>
               <td rowspan="2"><textarea type="text" class="form-control rectif" ng-model="course0" placeholder="Curso" maxlength="70"></textarea></td>
+
               <td rowspan="2"><input type="text" class="form-control rectif" ng-model="sem0" placeholder=""></td>
               <td rowspan="2"><input type="text" class="form-control rectif" ng-model="school0" placeholder=""></td>
               <td rowspan="2"><input type="text" class="form-control rectif" ng-model="t0" placeholder=""></td>
@@ -106,6 +107,19 @@
               <td rowspan="2"><input type="text" class="form-control rectif" ng-m   odel="nroom0" placeholder=""></td>
               <td rowspan="2"><input type="text" class="form-control rectif" ng-model="group0" placeholder=""></td>
               <td rowspan="2"><input type="text" class="form-control rectif" ng-model="nstudent0" placeholder=""></td>
+
+              <td rowspan="2"><input type="text" class="form-control rectif rectif-letter" ng-model="sem0" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control rectif rectif-letter" ng-model="school0" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control rectif rectif-letter" ng-model="t0" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control rectif rectif-letter" ng-model="p0" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control rectif rectif-letter" ng-model="l0" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control rectif rectif-letter" ng-model="hshare0" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control rectif rectif-letter" ng-model="hweek0" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control rectif rectif-letter" ng-model="htotal0" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control rectif rectif-letter" ng-model="nroom0" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control rectif rectif-letter" ng-model="group0" placeholder=""></td>
+              <td rowspan="2"><input type="text" class="form-control rectif rectif-letter" ng-model="nstudent0" placeholder=""></td>
+
               <td>De: </td>
               <td><input type="text" class="form-control rectif" ng-model="ld0" placeholder=""></td>
               <td><input type="text" class="form-control rectif" ng-model="md0" placeholder=""></td>
@@ -125,8 +139,8 @@
           <button type="button" class="btn btn-info" ng-click="addCourse()">
           	<span class="glyphicon glyphicon-plus"></span> Añadir
           </button>
-          <button type="button" class="btn btn-danger">
-          	<span class="glyphicon glyphicon-copy"></span> Duplicar
+          <button type="button" class="btn btn-danger" ng-click="removeCourse()">
+          	<span class="glyphicon glyphicon-minus"></span> Eliminar Ultimo
           </button>
         </div>
         <br>
@@ -197,7 +211,7 @@
         </button>
       </div>
     </div>
-    <input type="text" class="form-control" ng-model="courses" placeholder="">
+    
   </body>
 </html>
 
