@@ -49,7 +49,8 @@ app.controller('ctrl', function($scope, $compile) {
 	var placeh2= ['Investigacion', '2 meses', 'martes de 9:00 a 13:00', 'EPIS', 'horas/semana', 'total horas'];
 	var exit= '"></td>';
 
-	var str2 = '<tr>' + textarea + models2[0] + $scope.countInvest + '" placeholder="' + placeh2[0] + '"></textarea></td>';
+	var str2 = '<tr id="investigationLine' + $scope.countInvest + '">' ;
+	str2 += textarea + models2[0] + $scope.countInvest + '" placeholder="' + placeh2[0] + '"></textarea></td>';
 	for(var i = 1; i < 6; i++){
 	    if(i == 2){
 		str2 += tamcelH + models2[i] + $scope.countInvest + '" placeholder="' + placeh2[i] + exit;
@@ -72,7 +73,8 @@ app.controller('ctrl', function($scope, $compile) {
 	var placeh3= ['Trabajos', '2 meses', 'martes de 9:00 a 13:00', 'EPIS', 'horas/semana', 'total horas'];
 	var exit3= '"></td>';
 
-	var str3 = '<tr>' + textarea3 + models3[0] + $scope.countTrabajo + '" placeholder="' + placeh3[0] + '"></textarea></td>';
+	var str3 = '<tr id="worksLine' + $scope.countTrabajo + '">'; 
+	    str3 += textarea3 + models3[0] + $scope.countTrabajo + '" placeholder="' + placeh3[0] + '"></textarea></td>';
 	for(var i = 1; i < 6; i++){
 	    if(i == 2){
 		str3 += tamcelH3 + models3[i] + $scope.countTrabajo + '" placeholder="' + placeh3[i] + exit3;
@@ -88,9 +90,26 @@ app.controller('ctrl', function($scope, $compile) {
     };
 
     $scope.removeCourse = function() {
-        angular.element( document.querySelector( "#courseLine"+$scope.countCourses ) ).remove();
-        angular.element( document.querySelector( "#courseLine"+$scope.countCourses ) ).remove();
-        $scope.countCourses--;
+	if($scope.countCourses >= 1){
+	    angular.element( document.querySelector( "#courseLine"+$scope.countCourses ) ).remove();
+	    angular.element( document.querySelector( "#courseLine"+$scope.countCourses ) ).remove();
+	    $scope.countCourses--;
+	}
     };
+    $scope.removeInvest = function() {
+	if($scope.countInvest >= 1){
+	    angular.element( document.querySelector( "#investigationLine"+$scope.countInvest ) ).remove();
+	    //ngular.element( document.querySelector( "#investigationLine"+$scope.countInvest ) ).remove();
+	    $scope.countInvest--;
+	}
+    };
+    $scope.removeWorks = function() {
+	if($scope.countTrabajo >= 1){
+	    angular.element( document.querySelector( "#worksLine"+$scope.countTrabajo ) ).remove();
+	    //angular.element( document.querySelector( "#worksLine"+$scope.countCourses ) ).remove();
+	    $scope.countTrabajo--;
+	}
+    };
+
 });
     

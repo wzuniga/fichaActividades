@@ -53,9 +53,7 @@
               <td><input type="text" class="form-control" ng-model="status" placeholder="Condicion"></td>
             </tr>
           </table>
-          
         </div>
-
         <div class="col-sm-12">
           <table class="table table-striped">
             <tr>
@@ -176,8 +174,18 @@
 	  <tr>-->
 	  
         </table>
+	<table  class="table table-bordered" >
+	  <tr>
+	     <th colspan="4" class="borderTD">TOTAL DE HORAS DE INVESTIGACION</th>
+             <td class="borderTD tamCeldas"><input type="text" placeholder="00.0" class="form-control" disabled></td>
+             <td class="borderTD tamCeldas"><input type="text" placeholder="00.0" class="form-control" disabled></td>
+	  <tr>
+	</table>  
 	<button type="button" class="btn btn-info" ng-click="addInvestigation()">
           <span class="glyphicon glyphicon-plus"></span> Añadir
+        </button>
+	<button type="button" class="btn btn-danger" ng-click="removeInvest()">
+          <span class="glyphicon glyphicon-minus"></span> Eliminar Ultimo
         </button>
       </div>
       <br><br>
@@ -191,7 +199,7 @@
 	    <th>Horas Semanales</th>
 	    <th>Total de Horas</th> 
 	  </tr>
-	  <tr>
+	  <tr id="tr3">
 	    <!--<td><input type="text" class="form-control" ng-model="investigation2" placeholder="Trabajos"></td>-->
 	    <td><textarea class="form-control rectif" rows="2" ng-model = "works2" placeholder="Trabajos"></textarea></td>
             <td class="tamCeldas"><input type="text" class="form-control" ng-model="duration2" placeholder="2 meses"></td>
@@ -200,14 +208,19 @@
             <td class="tamCeldas"><input type="text" class="form-control" ng-model="hourweek2" placeholder="horas/semana"></td>
             <td class="tamCeldas"><input type="text" class="form-control" ng-model="totalhour2" placeholder="total horas"></td>
 	  </tr>
+	  </table>
+	  <table class="table table-bordered">
 	  <tr>
 	    <th colspan="4" class="borderTD">TOTAL DE HORAS TRABAJO NO LECTIVO</th>
-            <td class="borderTD"><input type="text" placeholder="00.0" class="form-control" disabled></td>
-            <td class="borderTD"><input type="text" placeholder="00.0" class="form-control" disabled></td>
+            <td class="borderTD tamCeldas"><input type="text" placeholder="00.0" class="form-control" disabled></td>
+            <td class="borderTD tamCeldas"><input type="text" placeholder="00.0" class="form-control" disabled></td>
 	  </tr>
         </table>
 	<button type="button" class="btn btn-info" ng-click="addWorks()">
           <span class="glyphicon glyphicon-plus"></span> Añadir
+        </button>
+	<button type="button" class="btn btn-danger" ng-click="removeWorks()">
+          <span class="glyphicon glyphicon-minus"></span> Eliminar Ultimo
         </button>
       </div>
     </div>
