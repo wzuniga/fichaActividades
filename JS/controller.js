@@ -5,6 +5,7 @@ app.controller('ctrl', function($scope, $compile) {
     $scope.countInvest = 0;
     $scope.countTrabajo = 0;
 
+    $scope.suma = "gg1";
 
     $scope.addCourse = function() {
 
@@ -44,8 +45,8 @@ app.controller('ctrl', function($scope, $compile) {
 	$scope.countInvest++;
 	var models2 = ['investigation', 'duration', 'schedule', 'physicalplant', 'hourweek', 'totalhour'];
 	var textarea = '<td><textarea class="form-control rectif" rows="2" ng-model="';
-	var tamcel = '<td class="tamCeldas"><input type="text" class="form-control" ng-model="';
-	var tamcelH= '<td class="tamCeldasHor"><input type="text" class="form-control" ng-model="';
+	var tamcel = '<td class="tamCeldas"><input type="text" class="form-control  rectif-letter" ng-model="';
+	var tamcelH= '<td class="tamCeldasHor"><input type="text" class="form-control  rectif-letter" ng-model="';
 	var placeh2= ['Investigacion', '2 meses', 'martes de 9:00 a 13:00', 'EPIS', 'horas/semana', 'total horas'];
 	var exit= '"></td>';
 
@@ -68,8 +69,8 @@ app.controller('ctrl', function($scope, $compile) {
 	$scope.countTrabajo++;
 	var models3 = ['works2', 'duration2', 'schedule2', 'physicalplant2', 'hourweek2', 'totalhour2'];
 	var textarea3 = '<td><textarea class="form-control rectif" rows="2" ng-model="';
-	var tamcel3 = '<td class="tamCeldas"><input type="text" class="form-control" ng-model="';
-	var tamcelH3= '<td class="tamCeldasHor"><input type="text" class="form-control" ng-model="';
+	var tamcel3 = '<td class="tamCeldas"><input type="text" class="form-control  rectif-letter" ng-model="';
+	var tamcelH3= '<td class="tamCeldasHor"><input type="text" class="form-control  rectif-letter" ng-model="';
 	var placeh3= ['Trabajos', '2 meses', 'martes de 9:00 a 13:00', 'EPIS', 'horas/semana', 'total horas'];
 	var exit3= '"></td>';
 
@@ -110,6 +111,11 @@ app.controller('ctrl', function($scope, $compile) {
 	    $scope.countTrabajo--;
 	}
     };
+
+    $scope.testing = function() {
+        $scope.suma += " + gg2";
+	$scope.gg3 = $scope.$eval('gg1 + gg2');
+    }
 
 });
     

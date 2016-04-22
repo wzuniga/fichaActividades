@@ -28,6 +28,19 @@
 
         <p>PROXIMAMENTE UCOMEDOR Y GYGABUSS</p> 
       </div>
+
+
+	<input type="text" ng-model="gg1"/>
+        <input type="text" ng-model="gg2"/>
+        <input type="text" ng-model="gg3"/>
+        <p>Total in dollar: <span ng-bind="gg3"></span></p>
+        <p>{{suma}}<p/>
+	<button type="button" class="btn btn-danger margin-button" ng-click="testing()">
+          <span class="glyphicon glyphicon-minus"></span> Eliminar Ultimo
+        </button>
+
+
+
       <!-- ok -->
       <div class="row">
 
@@ -150,11 +163,11 @@
 	    <tr>
 	      <!--<td><input type="text" class="form-control" ng-model="investigation" placeholder="Investigacion"></td>-->
 	      <td><textarea class="form-control rectif" rows="2" ng-model='investigation' placeholder="Investigacion"></textarea></td>
-            <td class="tamCeldas"><input type="text" class="form-control" ng-model="duration0" placeholder="2 meses"></td>
-              <td class="tamCeldasHor"><input type="text" class="form-control" ng-model="schedule0" placeholder="martes de 9:00 a 13:00"></td>
-              <td class="tamCeldas"><input type="text" class="form-control" ng-model="physicalplant0" placeholder="EPIS"></td>
-              <td class="tamCeldas"><input type="text" class="form-control" ng-model="hourweek0" placeholder="horas/semana"></td>
-              <td class="tamCeldas"><input type="text" class="form-control" ng-model="totalhour0" placeholder="total horas"></td>
+            <td class="tamCeldas"><input type="text" class="form-control rectif-letter" ng-model="duration0" placeholder="2 meses"></td>
+              <td class="tamCeldasHor"><input type="text" class="form-control rectif-letter" ng-model="schedule0" placeholder="martes de 9:00 a 13:00"></td>
+              <td class="tamCeldas"><input type="text" class="form-control rectif-letter" ng-model="physicalplant0" placeholder="EPIS"></td>
+              <td class="tamCeldas"><input type="text" class="form-control rectif-letter" ng-model="hourweek0" placeholder="horas/semana"></td>
+              <td class="tamCeldas"><input type="text" class="form-control rectif-letter" ng-model="totalhour0" placeholder="total horas"></td>
 	    </tr>
 	      <!--<tr>
 	      <th colspan="4" class="borderTD">TOTAL DE HORAS DE INVESTIGACION</th>
@@ -191,11 +204,11 @@
 	    <tr id="tr3">
 	      <!--<td><input type="text" class="form-control" ng-model="investigation2" placeholder="Trabajos"></td>-->
 	      <td><textarea class="form-control rectif" rows="2" ng-model = "works2" placeholder="Trabajos"></textarea></td>
-              <td class="tamCeldas"><input type="text" class="form-control" ng-model="duration2" placeholder="2 meses"></td>
-              <td class="tamCeldasHor"><input type="text" class="form-control" ng-model="schedule2" placeholder="martes de 9:00 a 13:00"></td>
-              <td class="tamCeldas"><input type="text" class="form-control" ng-model="physicalplant2" placeholder="EPIS"></td>
-              <td class="tamCeldas"><input type="text" class="form-control" ng-model="hourweek2" placeholder="horas/semana"></td>
-              <td class="tamCeldas"><input type="text" class="form-control" ng-model="totalhour2" placeholder="total horas"></td>
+              <td class="tamCeldas"><input type="text" class="form-control rectif-letter" ng-model="duration2" placeholder="2 meses"></td>
+              <td class="tamCeldasHor"><input type="text" class="form-control rectif-letter" ng-model="schedule2" placeholder="martes de 9:00 a 13:00"></td>
+              <td class="tamCeldas"><input type="text" class="form-control rectif-letter" ng-model="physicalplant2" placeholder="EPIS"></td>
+              <td class="tamCeldas"><input type="text" class="form-control rectif-letter" ng-model="hourweek2" placeholder="horas/semana"></td>
+              <td class="tamCeldas"><input type="text" class="form-control rectif-letter" ng-model="totalhour2" placeholder="total horas"></td>
 	    </tr>
 	  </table>  
 	  <table class="table table-bordered">
@@ -211,6 +224,12 @@
 	  <button type="button" class="btn btn-danger margin-button" ng-click="removeWorks()">
             <span class="glyphicon glyphicon-minus"></span> Eliminar Ultimo
           </button>
+
+
+
+
+
+
         </div>
       </div>
 
