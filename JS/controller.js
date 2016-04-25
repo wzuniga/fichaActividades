@@ -6,6 +6,7 @@ app.controller('ctrl', function($scope, $compile) {
     $scope.countTrabajo = 0;
 
     $scope.suma = "gg1";
+    $scope.total1 = 0;
 
     $scope.addCourse = function() {
 
@@ -115,7 +116,19 @@ app.controller('ctrl', function($scope, $compile) {
     $scope.testing = function() {
         $scope.suma += " + gg2";
 	$scope.gg3 = $scope.$eval('gg1 + gg2');
-    }
+    };
+    $scope.calcular = function (){
+        $scope.total1 = parseInt($scope.hourweek0);
+        for (var i = 1; i <= $scope.countInvest; i++){
+            $scope.total1 += parseInt($scope["hourweek"+(i)]);    
+        }
+        //$scope.total1 = parseInt($scope.hourweek0);
+        //if($scope.countInvest){
+        //  $scope.total1 += parseInt($scope.hourweek1);
+        //}
+    };
+    $scope.$watch($scope.calcular);
+
 
 });
     
