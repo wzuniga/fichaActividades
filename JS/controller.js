@@ -129,6 +129,34 @@ app.controller('ctrl', function($scope, $compile) {
     };
     $scope.$watch($scope.calcular);
 
+    $scope.makeJSON2 = function(){
+	var JSON2 = '';
+	for (var i = 0; i <= $scope.countInvest; i++){
+	    JSON2 += '{\n';
+	    JSON2 += '"investigation" : "' + $scope["investigation" + (i)] + '",\n' +
+		     '"duration" : "' + $scope["duration" + (i)] + '",\n' +
+		     '"schedule" : "' + $scope["schedule" + (i)] + '",\n' +
+		     '"physicalplant" : "' + $scope["physicalplant" + (i)] + '",\n' +
+		     '"hourweek" : "' + $scope["hourweek" + (i)] + '",\n' + 
+		     '"hourtotal" : "' + $scope["totalhour" + (i)] + '",\n' +
+		     '}\n';
+	}
+    };
+    $scope.makeJSON3 = function(){
+	var JSON3 = '';
+	for (var i = 0; i <= $scope.countTrabajo; i++){
+	    JSON3 += '{\n';
+	    JSON3 += '"investigation" : "' + $scope["investigation2" + (i)] + '",\n' +
+		     '"duration" : "' + $scope["duration2" + (i)] + '",\n' +
+		     '"schedule" : "' + $scope["schedule2" + (i)] + '",\n' +
+		     '"physicalplant" : "' + $scope["physicalplant2" + (i)] + '",\n' +
+		     '"hourweek" : "' + $scope["hourweek2" + (i)] + '",\n' + 
+		     '"hourtotal" : "' + $scope["totalhour2" + (i)] + '",\n' +
+		     '}\n';
+	}
+    };
+
+
 
 });
     
