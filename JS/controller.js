@@ -16,9 +16,9 @@ app.controller('ctrl', function($scope, $compile) {
         var models = ['course', 'sem', 'school', 't', 'p', 'l', 'hshare', 'hweek', 'htotal', 'nroom', 'group', 'nstudent', 'ld', 'md', 'mid', 'jd', 'vd', 'lh', 'mh', 'mih', 'jh', 'vh'];
         var placeh = ['Curso','','','','','','','','','','','','','','','','','','','','','']
         var str = '<tr id="courseLine'+$scope.countCourses+'">';
-      	
-	var temp = '<td rowspan="2"><textarea class="form-control rectif" ng-model="'; 
-	str += temp+models[0]+$scope.countCourses+'" placeholder="'+placeh[0]+'"></textarea></td>';
+
+    var temp = '<td rowspan="2"><textarea class="form-control rectif" ng-model="'; 
+    str += temp+models[0]+$scope.countCourses+'" placeholder="'+placeh[0]+'"></textarea></td>';
 
         for (var i = 1; i < 12; i++)
             str += inp+models[i]+$scope.countCourses+'" placeholder="'+placeh[i]+'"></td>';
@@ -105,16 +105,77 @@ app.controller('ctrl', function($scope, $compile) {
 	}
     };
     $scope.removeWorks = function() {
-	if($scope.countTrabajo >= 1){
-	    angular.element( document.querySelector( "#worksLine"+$scope.countTrabajo ) ).remove();
-	    //angular.element( document.querySelector( "#worksLine"+$scope.countCourses ) ).remove();
-	    $scope.countTrabajo--;
-	}
+        if($scope.countTrabajo >= 1){
+            angular.element( document.querySelector( "#worksLine"+$scope.countTrabajo ) ).remove();
+            //angular.element( document.querySelector( "#worksLine"+$scope.countCourses ) ).remove();
+            $scope.countTrabajo--;
+        }
     };
 
     $scope.testing = function() {
         $scope.suma += " + gg2";
-	$scope.gg3 = $scope.$eval('gg1 + gg2');
+        $scope.gg3 = $scope.$eval('gg1 + gg2');
+    }
+
+    $scope.makeJSON = function(){
+        var today = new Date();
+        var names = $scope.getName($scope.name);
+        var days = ["l","m","mi","j","v"];
+        var JSON = '';
+        JSON += '{\n';
+        JSON += '"year": ' + today.getFullYear() + ',\n'+
+                '"month": ' + (today.getMonth()+1) + ',\n'+
+                '"day": ' + today.getDate() + ',\n'+
+                '"firstname": "' + names[1] + '",\n'+
+                '"lastname": "' + names[0] + '", \n'+
+                '"faculty": "' + $scope.faculty + '",\n'+
+                '"deparment": "' + $scope.deparment + '",\n'+
+                '"category": "' + $scope.category + '",\n'+
+                '"regime": "' + $scope.regime + '",\n'+
+                '"status": "' + $scope.status + '",\n'+
+                '"title": "' + $scope.title + '",\n'+
+                '"speciality": "' + $scope.speciality + '",\n'+
+                '"courses": [';
+
+        for (var i = 0; i <= $scope.countCourses; i++) {
+            JSON += '{\n'+
+                        '"name": "' + $scope["course"+(i)] + '",\n'+
+                        '"school": "' + $scope["school"+(i)] + '",\n'+
+                        '"type": "' + $scope.getType(i) + '",\n'+
+                        '"group": "' + $scope["group"+(i)] + '",\n'+
+                        '"schedule": [\n';
+                            
+            for (var e = 0; e < days.length; e++) {
+                var desde = $scope[days[e]+"d"+i];
+                var hasta = $scope[days[e]+"h"+i];
+                console.log(typeof desde !== "undefined" && desde != "" && typeof hasta !== "undefined" && hasta != "");
+                if ( typeof desde !== "undefined" && desde != "" && typeof hasta !== "undefined" && hasta != "" ){
+                    JSON+='{\n'+
+                        '"day": ' + (e+1) + ',\n'+
+                        '"start": ' + desde + ',\n'+
+                        '"end": ' + hasta + '\n'+
+                    '},\n';
+                }
+            }
+            JSON +=    ']\n'+
+                    '},\n';
+        }
+
+        JSON += '  ]\n';
+        JSON += '}';
+        console.log(JSON);
+    }
+
+    $scope.getName = function(fullName){
+        return fullName.split(",");
+    }
+    $scope.getType = function(index){
+        var t = $scope["t"+(index)];
+        var p = $scope["p"+(index)];
+        var l = $scope["l"+(index)];
+        if ( typeof t !== "undefined" && t != "" ) return "T";
+        if ( typeof p !== "undefined" && p != "" ) return "P";
+        if ( typeof l !== "undefined" && l != "" ) return "L";
     }
 
 });
