@@ -6,6 +6,7 @@ app.controller('ctrl', function($scope, $compile) {
     $scope.countTrabajo = 0;
 
     $scope.suma = "gg1";
+    $scope.total1 = 0;
 
     $scope.addCourse = function() {
 
@@ -115,7 +116,47 @@ app.controller('ctrl', function($scope, $compile) {
     $scope.testing = function() {
         $scope.suma += " + gg2";
 	$scope.gg3 = $scope.$eval('gg1 + gg2');
-    }
+    };
+    $scope.calcular = function (){
+        $scope.total1 = parseInt($scope.hourweek0);
+        for (var i = 1; i <= $scope.countInvest; i++){
+            $scope.total1 += parseInt($scope["hourweek"+(i)]);    
+        }
+        //$scope.total1 = parseInt($scope.hourweek0);
+        //if($scope.countInvest){
+        //  $scope.total1 += parseInt($scope.hourweek1);
+        //}
+    };
+    $scope.$watch($scope.calcular);
+
+    $scope.makeJSON2 = function(){
+	var JSON2 = '';
+	for (var i = 0; i <= $scope.countInvest; i++){
+	    JSON2 += '{\n';
+	    JSON2 += '"investigation" : "' + $scope["investigation" + (i)] + '",\n' +
+		     '"duration" : "' + $scope["duration" + (i)] + '",\n' +
+		     '"schedule" : "' + $scope["schedule" + (i)] + '",\n' +
+		     '"physicalplant" : "' + $scope["physicalplant" + (i)] + '",\n' +
+		     '"hourweek" : "' + $scope["hourweek" + (i)] + '",\n' + 
+		     '"hourtotal" : "' + $scope["totalhour" + (i)] + '",\n' +
+		     '}\n';
+	}
+    };
+    $scope.makeJSON3 = function(){
+	var JSON3 = '';
+	for (var i = 0; i <= $scope.countTrabajo; i++){
+	    JSON3 += '{\n';
+	    JSON3 += '"investigation" : "' + $scope["investigation2" + (i)] + '",\n' +
+		     '"duration" : "' + $scope["duration2" + (i)] + '",\n' +
+		     '"schedule" : "' + $scope["schedule2" + (i)] + '",\n' +
+		     '"physicalplant" : "' + $scope["physicalplant2" + (i)] + '",\n' +
+		     '"hourweek" : "' + $scope["hourweek2" + (i)] + '",\n' + 
+		     '"hourtotal" : "' + $scope["totalhour2" + (i)] + '",\n' +
+		     '}\n';
+	}
+    };
+
+
 
 });
     
